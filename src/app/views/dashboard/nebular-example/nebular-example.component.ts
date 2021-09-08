@@ -24,7 +24,6 @@ export class NebularExampleComponent implements OnInit {
 
   ngOnInit(): void {
     this.myArray= [
-      
       {
         name: 'Dody',
         position: 'Team Lead Front End Developer',

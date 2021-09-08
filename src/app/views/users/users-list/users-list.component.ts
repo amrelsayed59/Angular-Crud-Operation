@@ -7,6 +7,10 @@ import { TasksService } from "src/app/core/services/tasks.service";
   styleUrls: ["./users-list.component.scss"],
 })
 export class UsersListComponent implements OnInit {
+
+
+  name: string = 'Amr'
+
   constructor(public tasksSer: TasksService) {}
 
   ngOnInit(): void {}
