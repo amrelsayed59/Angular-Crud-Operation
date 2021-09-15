@@ -2,7 +2,8 @@
     <a class="navbar-brand col-sm-3 col-md-2 mr-0" routerLink="../admin">
         <div class="main-logo">
             <div class="img-box">
-                <img class="img-fluid" src="./assets/Images/user-dummy-pic.png" alt="Logo" />
+                <!-- <img class="img-fluid" src="./assets/Images/user-dummy-pic.png" alt="Logo" /> -->
+                <img class="img-fluid" [src]="defaultImage | defaultImage:placeholderImage " alt="Logo" />
             </div>
             <span> Solution</span>
         </div>

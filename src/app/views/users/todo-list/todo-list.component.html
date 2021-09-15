@@ -1,0 +1,13 @@
+<p>todo-list works!</p>
+
+<p>{{remainingTasks}} Remainaing out of {{items.length}} tasks</p>
+<input type="text" placeholder="Enter New Task" #task (input)="null"/>
+<br/>
+<br/>
+
+<button class="btn btn-primary" (click)="add(task)" [disabled]="!task.value">Add New Task</button>
+<br/>
+<br/>
+<ul *ngFor="let item of items">
+    <li [ngClass]="item.isDone? 'done':''" (click)="toggleTaskisDone(item)">{{item.name}}</li>
+</ul>

@@ -9,11 +9,12 @@ import { HttpClient } from '@angular/common/http';
 import { UserLayoutComponent } from './user-layout/user-layout.component';
 import { AuthLayoutComponent } from './auth-layout/auth-layout.component';
 import { BlankLayoutComponent } from './blank-layout/blank-layout.component';
+import { DefaultImage } from 'src/app/core/pipes/default-image.pipe';
 
 
 
 @NgModule({
-  declarations: [AdminLayoutComponent, UserLayoutComponent, AuthLayoutComponent, BlankLayoutComponent],
+  declarations: [AdminLayoutComponent, UserLayoutComponent, AuthLayoutComponent, BlankLayoutComponent, DefaultImage],
   imports: [
     CommonModule,
     RouterModule,

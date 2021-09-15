@@ -7,12 +7,21 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./admin-layout.component.scss']
 })
 export class AdminLayoutComponent implements OnInit {
+  defaultImage: string;
+  placeholderImage: string;
+
   currentLang: string;
   constructor(
     public translate: TranslateService
   ) { 
     this.currentLang = localStorage.getItem('currentLang') || 'en';
     this.translate.use(this.currentLang);
+
+    setTimeout(() => {
+      this.defaultImage = './assets/Images/myPhoto.jfif'
+    }, 2000);
+    this.placeholderImage = 'https://via.placeholder.com/100x100'
+
   }
 
   ngOnInit(): void {
