@@ -9,14 +9,19 @@ import { ToastrService } from 'ngx-toastr';
 export class AppComponent {
   title = 'hadafSolution';
 
+  
+  hello() {
+    return 'Hello World!';
+  }
+
   constructor(
-    private toastr: ToastrService
+    // private toastr: ToastrService
   ) {
 
   }
 
-  showSuccess() {
-    this.toastr.success('Hello World', 'Toastr fun!');
-  }
+  // showSuccess() {
+  //   this.toastr.success('Hello World', 'Toastr fun!');
+  // }
 
 }

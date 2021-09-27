@@ -26,4 +26,5 @@ export class UsersListComponent implements OnInit, AfterViewInit {
   deleteTask(i) {
     this.tasksSer.deleteTask(i);
   }
+  
 }

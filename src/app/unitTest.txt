@@ -1,0 +1,9 @@
+test derivin development (TDD)
+    - add test
+    - run and watch test
+    - write code and implement 
+    - run test
+    - refactor
+
+behavior derivin development (BDD);
+    
