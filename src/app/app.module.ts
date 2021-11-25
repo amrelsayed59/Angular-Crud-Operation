@@ -1,6 +1,6 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
-import { HttpClientModule, HttpClient } from "@angular/common/http";
+import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { SharedModule } from "./shared/shared.module";
@@ -13,6 +13,7 @@ import { APP_BASE_HREF } from "@angular/common";
 
 import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
+import { HttpErrorInterceptorService } from './core/interceptors/httperror-interceptor';
 
 @NgModule({
   declarations: [AppComponent],
@@ -39,6 +40,11 @@ import { TranslateHttpLoader } from "@ngx-translate/http-loader";
   providers: [
     httpInterceptorProviders,
     { provide: APP_BASE_HREF, useValue: "./" },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpErrorInterceptorService,
+      multi: true,
+    }
   ],
   bootstrap: [AppComponent],
 })

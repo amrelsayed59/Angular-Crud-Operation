@@ -17,7 +17,7 @@ export class PostsService {
 
   //Get All Posts
   getAll(): Observable<any> {
-    return this._HttpClient.get(`${env.apiUrl}/posts`).pipe(catchError(this._handleErrors.logError))  //Handling Error
+    return this._HttpClient.get(`${env.apiUrl}/posts`)    // .pipe(catchError(this._handleErrors.logError)) //Handling Error
   }
 
   //Show Post

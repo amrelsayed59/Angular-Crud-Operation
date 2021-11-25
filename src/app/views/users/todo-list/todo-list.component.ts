@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { LoadTodosAction } from 'src/app/store/actions/todos.action';
+import { StoreInterface } from 'src/app/store/store';
 
 
 class TodoItem {
@@ -14,7 +17,13 @@ class TodoItem {
 
 export class TodoListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private store: Store<StoreInterface>) {
+    this.store.subscribe(data => console.log(data.todos))
+   }
+
+   load () {
+     this.store.dispatch(new LoadTodosAction())
+   }
 
   items: any[] = [];
   isDone: boolean = false;
@@ -41,5 +50,7 @@ export class TodoListComponent implements OnInit {
   ngOnInit(): void {
     this.getRemaingCount()
   }
+
+
 
 }

@@ -1,0 +1,23 @@
+
+
+<!-- <input class="form-control fs-5 fw-semibold" [(ngModel)]="username" /> -->
+
+<div class="scroll-area">
+    <div *ngFor="let msg of messages">
+        dd
+        <strong>{{msg.username}}</strong>
+        <p>{{msg.message}}</p>
+    </div>
+</div>
+
+<form (submit)="submit()">
+    <input class="form-control" [value]="message" placeholder="Write a message" (change)="message=$event.target.value"/>
+</form>
+
+<!-- <ul class="list-group">
+    <li class="list-group-item disabled" aria-disabled="true">A disabled item</li>
+</ul> -->
+
+
+
+

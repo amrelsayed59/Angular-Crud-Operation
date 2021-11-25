@@ -25,7 +25,12 @@
             "aot": true,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "./node_modules/@zoomus/websdk/dist/lib",
+                "output": "./node_modules/@zoomus/websdk/dist/lib"
+              }
             ],
             "styles": [
               "node_modules/@fortawesome/fontawesome-free/css/all.min.css",

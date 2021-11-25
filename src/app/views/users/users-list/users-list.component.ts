@@ -1,4 +1,6 @@
 import { Component, OnInit, ViewChild, AfterViewInit, ElementRef } from "@angular/core";
+import { AsyncSubject, BehaviorSubject, interval, of, ReplaySubject, Subject } from 'rxjs';
+import { take, tap } from 'rxjs/operators';
 import { TasksService } from "src/app/core/services/tasks.service";
 import { TodoListComponent } from '../todo-list/todo-list.component';
 
@@ -16,7 +18,22 @@ export class UsersListComponent implements OnInit, AfterViewInit {
   constructor(public tasksSer: TasksService) {}
 
   ngOnInit(): void {
-    console.log('myTodo', this.myTodo)
+    console.log('myTodo', this.myTodo);
+
+    const subject = new ReplaySubject(0);
+    const behaviorSubject = new BehaviorSubject(0);
+    const replaySubject = new ReplaySubject(0);
+    const asyncSubject = new AsyncSubject();
+    subject.subscribe((x) =>{ 
+      console.log('in sub 1', x)
+    })
+    subject.next(1);
+    subject.next(2);
+    subject.subscribe((x) =>{ 
+      console.log('in sub 2', x)
+    })
+    subject.next(3);
+
   }
 
   ngAfterViewInit() {
