@@ -14,7 +14,12 @@ import { APP_BASE_HREF } from "@angular/common";
 import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import { HttpErrorInterceptorService } from './core/interceptors/httperror-interceptor';
-
+import { NbThemeModule, NbLayoutModule } from '@nebular/theme';
+import { NbEvaIconsModule } from '@nebular/eva-icons';
+import { GaugeModule } from 'angular-gauge';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatIconModule } from '@angular/material/icon';
+import { MatFormFieldModule } from '@angular/material/form-field';
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -36,6 +41,14 @@ import { HttpErrorInterceptorService } from './core/interceptors/httperror-inter
       },
     
     }),
+    NbThemeModule.forRoot({ name: 'default' }),
+    NbLayoutModule,
+    NbEvaIconsModule,
+    GaugeModule.forRoot(),
+    MatTabsModule,
+    MatIconModule,
+    MatFormFieldModule,
+  
   ],
   providers: [
     httpInterceptorProviders,

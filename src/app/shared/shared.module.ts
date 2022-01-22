@@ -5,6 +5,7 @@ import { LayoutsModule } from './components/layouts/layouts.module';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { RouterModule } from '@angular/router';
 import { DeleteModalComponent } from './components/delete-modal/delete-modal.component';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { DeleteModalComponent } from './components/delete-modal/delete-modal.com
     CommonModule,
     HttpClientModule,
     LayoutsModule,
-    RouterModule
+    RouterModule,
+    DragDropModule
   ],
   exports:[
     NotfoundComponent,

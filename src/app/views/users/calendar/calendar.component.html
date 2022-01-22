@@ -1,0 +1,31 @@
+<div class="text-center">
+  <h3>{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</h3>
+</div>
+<div [ngSwitch]="view">
+  <mwl-calendar-month-view
+    *ngSwitchCase="'month'"
+    [viewDate]="viewDate"
+    [events]="events"
+    [activeDayIsOpen]="true"
+    (dayClicked)="dayClicked($event.day)"
+    [cellTemplate]="customCellTemplate"
+  >
+  </mwl-calendar-month-view>
+</div>
+
+
+<ng-template #customCellTemplate let-day="day" let-locale="locale">
+  <div class="cal-cell-top">
+
+    <!-- <span class="cal-day-badge" *ngIf="day.badgeTotal > 0"
+      >{{ day.badgeTotal }}
+    </span> -->
+
+    <span class="cal-day-number"
+      >{{ day.date | calendarDate:'monthViewDayNumber':locale }}</span
+    >
+  </div>
+  <!-- <small style="margin: 5px">There are {{ day.events.length }} events on this day</small> -->
+  <small class="text-green" *ngIf="day.badgeTotal" style="margin: 5px"><i class="fas fa-flag"></i> Computional Thninking</small>
+  <small class="text-brown" *ngIf="day.badgeTotal" style="margin: 5px"><i class="fas fa-flag"></i> Computional Thninking</small>
+</ng-template>

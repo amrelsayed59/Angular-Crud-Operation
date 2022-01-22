@@ -19,6 +19,7 @@ import { StoreDevtoolsModule } from "@ngrx/store-devtools";
 import { VideoChatComponent } from "./video-chat/video-chat.component";
 import { FormsModule } from '@angular/forms';
 import { ZoomChatComponent } from './zoom-chat/zoom-chat.component';
+import { PaymentComponent } from './payment/payment.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { ZoomChatComponent } from './zoom-chat/zoom-chat.component';
     CounterComponent,
     VideoChatComponent,
     ZoomChatComponent,
+    PaymentComponent,
   ],
   imports: [
     FormsModule,
