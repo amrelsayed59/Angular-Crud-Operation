@@ -20,6 +20,7 @@ import { VideoChatComponent } from "./video-chat/video-chat.component";
 import { FormsModule } from '@angular/forms';
 import { ZoomChatComponent } from './zoom-chat/zoom-chat.component';
 import { PaymentComponent } from './payment/payment.component';
+import { BudgetCalculatorModule } from './budget-calculator/budget-calculator.module';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { PaymentComponent } from './payment/payment.component';
     PaymentComponent,
   ],
   imports: [
+    BudgetCalculatorModule,
     FormsModule,
     CommonModule,
     UsersRoutingModule,

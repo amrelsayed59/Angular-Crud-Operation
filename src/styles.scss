@@ -1,5 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import 'main-styles';
+@import '../node_modules/bulma/css/bulma.css';
 
 // themes - our custom or/and out of the box themes
 @import 'themes';
@@ -19,6 +21,17 @@
 @import '~bootstrap/scss/mixins';
 @import '~bootstrap/scss/grid';
 
-
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.content ul {
+    list-style: none;
+    margin: 0;
+}
+.content li + li {
+    margin: 0;
+}
+
+body {
+    overflow: auto;
+}
